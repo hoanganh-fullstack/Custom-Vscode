@@ -1,0 +1,464 @@
+/* =====================================================
+  APPLE INTELLIGENCE • LIQUID GLASS TAB
+  FULL FIX SAFE (DRACULA + ICON THEMES)
+===================================================== */
+
+:root {
+  --tab-radius: 12px;
+  --border-width: 2px;
+}
+
+/* =========================
+   TAB ACTIVE ROOT
+========================= */
+.monaco-workbench .tabs-container > .tab.active {
+  position: relative !important;
+  overflow: hidden;
+  border-radius: var(--tab-radius);
+
+  isolation: isolate;
+  z-index: 1;
+
+  backdrop-filter: blur(30px);
+
+  box-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.25),
+    0 0 20px rgba(0, 229, 255, 0.08),
+    0 0 40px rgba(123, 97, 255, 0.06);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+
+  animation: ambient-glow 6s ease-in-out infinite;
+}
+
+/* =========================
+   AURORA BACKGROUND
+========================= */
+.monaco-workbench .tabs-container > .tab.active::before {
+  content: '';
+  position: absolute;
+  inset: -200%;
+
+  z-index: -2;
+  pointer-events: none;
+
+  background: conic-gradient(
+    from 0deg,
+    #00ffff,
+    #00d4ff,
+    #0099ff,
+    #5b8cff,
+    #7b61ff,
+    #b04dff,
+    #ff4fd8,
+    #ff7a59,
+    #00ffff
+  );
+
+  filter: blur(20px) saturate(220%) brightness(1.5);
+  opacity: 0.8;
+
+  animation:
+    liquid-spin 10s linear infinite,
+    liquid-breathe 6s ease-in-out infinite;
+}
+
+/* =========================
+   GLASS SURFACE
+========================= */
+.monaco-workbench .tabs-container > .tab.active::after {
+  content: '';
+  position: absolute;
+  inset: var(--border-width);
+
+  border-radius: calc(var(--tab-radius) - 2px);
+
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.06)), var(--vscode-tab-activeBackground);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(40px) saturate(180%);
+}
+
+/* =========================
+   FORCE CONTENT ABOVE EFFECTS
+========================= */
+.monaco-workbench .tabs-container > .tab.active .label-name,
+.monaco-workbench .tabs-container > .tab.active .tab-label,
+.monaco-workbench .tabs-container > .tab.active .monaco-icon-label,
+.monaco-workbench .tabs-container > .tab.active .tab-icon,
+.monaco-workbench .tabs-container > .tab.active .codicon,
+.monaco-workbench .tabs-container > .tab.active .tab-actions,
+.monaco-workbench .tabs-container > .tab.active .tab-close,
+.monaco-workbench .tabs-container > .tab.active .tab-action-label {
+  position: relative !important;
+  z-index: 999 !important;
+}
+
+/* =========================
+   ICON FIX
+========================= */
+.monaco-workbench .tabs-container > .tab.active .codicon,
+.monaco-workbench .tabs-container > .tab.active .tab-icon,
+.monaco-workbench .tabs-container > .tab.active .tab-icon::before,
+.monaco-workbench .tabs-container > .tab.active .monaco-icon-label::before {
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  filter: drop-shadow(0 0 6px rgba(0, 212, 255, 0.35));
+}
+
+/* =========================
+   TEXT FIX
+========================= */
+.monaco-workbench .tabs-container > .tab.active .label-name,
+.monaco-workbench .tabs-container > .tab.active .tab-label {
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  color: #ffffff !important;
+
+  text-shadow:
+    0 0 6px rgba(255, 255, 255, 0.4),
+    0 0 14px rgba(0, 212, 255, 0.25);
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* =========================
+   ICON ALIGN
+========================= */
+.monaco-workbench .tabs-container > .tab.active .monaco-icon-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* =========================
+   HOVER EFFECT
+========================= */
+.monaco-workbench .tabs-container > .tab.active:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.3),
+    0 0 35px rgba(0, 255, 255, 0.15),
+    0 0 60px rgba(176, 77, 255, 0.12);
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes liquid-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes liquid-breathe {
+  0%,
+  100% {
+    filter: blur(18px) brightness(1.6) saturate(200%);
+  }
+
+  50% {
+    filter: blur(26px) brightness(2.1) saturate(260%);
+  }
+}
+
+@keyframes ambient-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 2px 12px rgba(0, 0, 0, 0.25),
+      0 0 20px rgba(0, 212, 255, 0.08);
+  }
+
+  50% {
+    box-shadow:
+      0 2px 18px rgba(0, 0, 0, 0.25),
+      0 0 35px rgba(123, 97, 255, 0.15);
+  }
+}
+
+/* CUSTOM TEXT GRADIENT */
+.mtk5 {
+  background: linear-gradient(180deg, #ffffff 0%, #d9ffe7 15%, #8fffc5 35%, #50fa7b 55%, #00e676 75%, #d9ffe7 100%);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  text-shadow:
+    0 0 8px rgba(255, 255, 255, 0.35),
+    0 0 12px rgba(80, 250, 123, 0.25),
+    0 0 24px rgba(80, 250, 123, 0.15);
+
+  filter: saturate(1.15) brightness(1.08);
+}
+
+.mtk7 {
+  background: linear-gradient(180deg, #fff8ef 0%, #ffe4c2 15%, #ffc98d 35%, #ffb86c 55%, #ff9f43 75%, #ffe4c2 100%);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  text-shadow:
+    0 0 8px rgba(255, 255, 255, 0.35),
+    0 0 12px rgba(255, 184, 108, 0.25),
+    0 0 24px rgba(255, 184, 108, 0.15);
+
+  filter: saturate(1.15) brightness(1.08);
+}
+
+.mtk9 {
+  background: linear-gradient(180deg, #c8f8ff 0%, #8be9fd 25%, #5fe1ff 50%, #8be9fd 75%, #c8f8ff 100%);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  text-shadow:
+    0 0 8px rgba(255, 255, 255, 0.3),
+    0 0 12px rgba(139, 233, 253, 0.3),
+    0 0 24px rgba(139, 233, 253, 0.18);
+
+  filter: saturate(1.35) brightness(1.12);
+}
+
+.mtk10 {
+  background: linear-gradient(180deg, #fff0f7 0%, #ffd1e8 15%, #ff9fd0 35%, #ff79c6 55%, #ff4fb0 75%, #ffd1e8 100%);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  text-shadow:
+    0 0 8px rgba(255, 255, 255, 0.35),
+    0 0 12px rgba(255, 121, 198, 0.25),
+    0 0 24px rgba(255, 121, 198, 0.15);
+
+  filter: saturate(1.15) brightness(1.08);
+}
+
+/* =========================================
+   APPLE INTELLIGENCE • SIDEBAR ACTIVE GLASS
+========================================= */
+
+/* ITEM được chọn */
+.monaco-workbench .explorer-folders-view .monaco-list-row.focused,
+.monaco-workbench .explorer-folders-view .monaco-list-row.selected {
+  position: relative;
+  color: rgba(255, 255, 255, 0.95) !important;
+
+  /* Glass nền nhẹ */
+  background: rgba(255, 255, 255, 0.06) !important;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-radius: 8px;
+
+  /* Glow kiểu Apple (không neon gắt) */
+  /* text-shadow:
+    0 0 2px rgba(255, 255, 255, 0.35),
+    0 0 8px rgba(120, 200, 255, 0.25),
+    0 0 16px rgba(120, 200, 255, 0.15); */
+  /* Glow mạnh hơn - Apple Intelligence Enhanced */
+  text-shadow:
+    0 0 2px rgba(255, 255, 255, 0.6),
+    0 0 6px rgba(255, 255, 255, 0.35),
+    0 0 12px rgba(120, 200, 255, 0.45),
+    0 0 22px rgba(120, 200, 255, 0.25),
+    0 0 34px rgba(120, 200, 255, 0.15);
+
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Hover nhẹ như iOS */
+.monaco-workbench .explorer-folders-view .monaco-list-row:hover {
+  background: rgba(255, 255, 255, 0.04) !important;
+
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.15);
+
+  transition: all 0.2s ease;
+}
+
+/* Icon + text đồng bộ glow */
+.monaco-workbench .explorer-folders-view .monaco-list-row.focused .label-name,
+.monaco-workbench .explorer-folders-view .monaco-list-row.selected .label-name {
+  letter-spacing: 0.2px;
+}
+
+/* Animation nhẹ khi click (Apple feel) */
+.monaco-workbench .explorer-folders-view .monaco-list-row {
+  transition:
+    transform 0.15s ease,
+    background 0.25s ease;
+}
+
+.monaco-workbench .explorer-folders-view .monaco-list-row:active {
+  transform: scale(0.98);
+}
+
+/* =====================================================
+   DRACULA AURORA DOT GRID
+   Inspired by Cursor / Apple Intelligence
+===================================================== */
+
+.monaco-workbench {
+  position: relative;
+  overflow: hidden;
+}
+
+/* =========================
+   AURORA GLOW
+========================= */
+
+.monaco-workbench::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background:
+    radial-gradient(circle at 75% 20%, rgba(255, 121, 198, 0.18), transparent 30%),
+    radial-gradient(circle at 75% 75%, rgba(139, 233, 253, 0.18), transparent 35%),
+    radial-gradient(circle at 30% 90%, rgba(189, 147, 249, 0.15), transparent 30%);
+
+  filter: blur(120px);
+
+  animation: auroraMove 18s ease-in-out infinite alternate;
+}
+
+/* =========================
+   DOT GRID
+========================= */
+
+.monaco-workbench::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+
+  background-image: radial-gradient(rgba(189, 147, 249, 0.55) 0.8px, transparent 0.8px);
+
+  background-size: 22px 22px;
+
+  /* Giảm độ sáng */
+  opacity: 0.22;
+
+  mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 45%, rgba(0, 0, 0, 0.9) 70%, transparent 100%);
+
+  animation: gridFloat 30s linear infinite;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes auroraMove {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-40px, 20px);
+  }
+
+  100% {
+    transform: translate(20px, -30px);
+  }
+}
+
+@keyframes gridFloat {
+  from {
+    transform: translate(0, 0);
+  }
+
+  to {
+    transform: translate(-22px, -22px);
+  }
+}
+
+/* ============ */
+/* =====================================================
+   DRACULA LIQUID GLASS • MONACO SASH
+===================================================== */
+
+/* Base */
+.monaco-workbench .monaco-sash {
+  opacity: 1 !important;
+  transition: all 0.25s ease;
+}
+
+/* Vertical */
+.monaco-workbench .monaco-sash.vertical {
+  width: 2px !important;
+
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(139, 233, 253, 0.15) 20%,
+    rgba(189, 147, 249, 0.28) 50%,
+    rgba(139, 233, 253, 0.15) 80%,
+    transparent 100%
+  );
+
+  box-shadow:
+    0 0 8px rgba(139, 233, 253, 0.08),
+    0 0 20px rgba(189, 147, 249, 0.05);
+}
+
+/* Horizontal */
+.monaco-workbench .monaco-sash.horizontal {
+  height: 2px !important;
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(139, 233, 253, 0.15) 20%,
+    rgba(189, 147, 249, 0.28) 50%,
+    rgba(139, 233, 253, 0.15) 80%,
+    transparent 100%
+  );
+
+  box-shadow:
+    0 0 8px rgba(139, 233, 253, 0.08),
+    0 0 20px rgba(189, 147, 249, 0.05);
+}
+
+/* Hover */
+.monaco-workbench .monaco-sash:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(80, 250, 123, 0.15),
+    rgba(139, 233, 253, 0.75),
+    rgba(189, 147, 249, 0.85),
+    rgba(255, 184, 108, 0.25)
+  );
+
+  box-shadow:
+    0 0 10px rgba(139, 233, 253, 0.35),
+    0 0 25px rgba(189, 147, 249, 0.25),
+    0 0 40px rgba(139, 233, 253, 0.12);
+}
+
+/* Dragging */
+.monaco-workbench .monaco-sash.active {
+  background: linear-gradient(90deg, #50fa7b, #8be9fd, #bd93f9);
+
+  box-shadow:
+    0 0 15px rgba(139, 233, 253, 0.5),
+    0 0 30px rgba(189, 147, 249, 0.35);
+}
