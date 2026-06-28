@@ -1,0 +1,267 @@
+{
+  // =============================================
+  //    Auto fix & organize imports when save
+  // =============================================
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit", // Automatically correct ESLint errors when saving
+    "source.organizeImports": "explicit", // Automatically rearrange imports when saving
+  },
+
+  // ==========================================
+  //                 CURSOR
+  // ==========================================
+  "editor.cursorBlinking": "expand", // Create an expansion effect when the cursor blinks
+  "editor.cursorSmoothCaretAnimation": "on", // Enable smooth application cursor movement
+  "editor.cursorSurroundingLines": 2, // Keep the two lines around the cursor always visible
+  "editor.cursorWidth": 2, // Use fonts with ligatures
+  "editor.fontLigatures": true, // Enable ligature =>, ===, v.v.
+  "editor.fontSize": 15, // Font-size
+  "editor.letterSpacing": 0.5, // Character spacing
+  "editor.lineHeight": 24, // Line height
+
+  // ==========================================
+  //               FORMATTING
+  // ==========================================
+  "editor.formatOnPaste": true, // Automatically format code when pasting
+  "editor.formatOnSave": true, // Automatically format code when saving
+  "editor.formatOnType": true, // Automatically format code while typing
+  "editor.detectIndentation": false, // Disable automatic detection of indentation to maintain consistent formatting across different files and projects.
+
+  // ==========================================
+  //          EDITOR EXPERIENCE
+  // ==========================================
+  "editor.inlineSuggest.enabled": true, // Enable inline suggestions for a smoother suggestion experience
+  "editor.linkedEditing": true, // Enable the edit link feature to automatically update links when you edit them.
+  "editor.smoothScrolling": true, // Enable smoother scrolling.
+  "editor.tabCompletion": "on", // Activate tab completion to quickly insert complete suggestions.
+  "editor.tabSize": 2, // Use two spaces for the tabs to keep the code clean.
+  "editor.wordWrap": "bounded", // Automatically wraps to the next line when the limit is exceeded
+  "editor.wordWrapColumn": 120, // Line length is limited to 120 characters.
+  "editor.minimap.enabled": false, // => Save screen space
+  // "editor.rulers": [80, 120], // Line length control
+  "editor.codeLens": true, // Enabling CodeLens allows you to display additional information such as function usage counts, Git details, and more directly in the code, improving your ability to understand and work with the source code.
+  "editor.suggestSelection": "first", // Always choose the first suggestion in the suggestion list.
+
+  // ==========================================
+  //               VISUAL AIDS
+  // ==========================================
+  "editor.stickyScroll.enabled": true, // The default is true, no installation required.
+  "editor.inlayHints.enabled": "on", // It's on by default, no installation required.
+  "editor.bracketPairColorization.enabled": true, // The default is true, no installation required.
+  "editor.guides.bracketPairs": true, // Display color for parentheses
+  // "editor.renderWhitespace": "boundary", // Display spaces at the boundaries between words.
+
+  // ==========================================
+  //              THEME & UI
+  // ==========================================
+  "workbench.editor.limit.enabled": true, // Enable tab limits in VS Code
+  "workbench.editor.limit.value": 10, // Limit the number of tabs open in VS Code
+  // "workbench.colorTheme": "Dracula Theme", // Theme Vs Code
+  "workbench.iconTheme": "a-file-icon-vscode", // icon theme folder, file, v.v. in Explorer
+  "workbench.productIconTheme": "a-file-icon-vscode-product-icon-theme", // Uses product icon theme for the activity bar, status bar, and other UI elements
+  "workbench.editor.empty.hint": "hidden", // Hide the hint when there are no open editors, providing a cleaner interface when no files are open.
+  "workbench.editor.wrapTabs": true, // Automatically wrap to the next line when multiple tabs are open
+  "workbench.list.smoothScrolling": true, // Scrolling is smoother in Explorer, Search, Git, v.v.
+
+  // ==========================================
+  //              PRETTIER
+  // ==========================================
+  "editor.defaultFormatter": "esbenp.prettier-vscode", // Prettier form in All Languages
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode", // Prettier form HTML
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode", // Prettier form Javascript
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode", // Prettier form CSS
+  },
+  "prettier.singleQuote": true, // Use single quotes instead of double quotes.
+  "prettier.trailingComma": "es5", // Add commas at the end of elements in arrays, objects, etc., whenever possible.
+  "prettier.tabWidth": 2, // Use two spaces for the tab.
+  "prettier.useTabs": false, // Use spaces instead of tabs.
+  "prettier.printWidth": 120, // Line length limit: 120 characters
+
+  // ==========================================
+  //                ESLINT
+  // ==========================================
+  "eslint.alwaysShowStatus": true, // Always display the ESLint status in the status bar, providing quick access to linting information and actions.
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "vue"],
+
+  // ==========================================
+  //            COLOR HIGHLIGHT
+  // ==========================================
+  "color-highlight.markerType": "underline", // Show underline for color highlight
+  "color-highlight.markRuler": true, // Display colors on the ruler
+
+  // ==========================================
+  //             INTELLISENSE
+  // ==========================================
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true,
+  },
+
+  // ==========================================
+  //                 EMMET
+  // ==========================================
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "vue-html": "html",
+  },
+  "emmet.triggerExpansionOnTab": true, // Enable Emmet abbreviation expansion when pressing the Tab key
+
+  // ==========================================
+  //                AUTO SAVE
+  // ==========================================
+  "files.autoSave": "afterDelay", // Automatic saving after 500ms is not working
+  "files.autoSaveDelay": 500, // Timeout period before auto-save
+
+  // ==========================================
+  //                   GIT
+  // ==========================================
+  "git.autofetch": true, // Automatically fetch new data from the remote repository, keeping you up-to-date with the latest changes without manual intervention.
+  "git.confirmSync": false, // Turning off confirmation during syncing saves time once you're used to automatic syncing and don't need to confirm each time.
+  "git.enableSmartCommit": true, // Enable smart commits, allowing you to commit without entering a message if there are no changes or if you have provided a default message. This saves time when committing minor changes or when you are used to using the default message.
+  "git.enableStatusBarSync": true, // Displaying the synchronization status on the status bar makes it easy to see when new changes need synchronization or when synchronization is complete, improving the Git workflow in VS Code.
+
+  // ==========================================
+  //                 TERMINAL
+  // ==========================================
+  "terminal.integrated.defaultProfile.osx": "bash", // Set Git Bash as the default terminal on macOS
+  "terminal.integrated.gpuAcceleration": "on", // It can be omitted because VS Code manages it quite well.
+  "terminal.integrated.scrollback": 10000, // Very useful when debugging long logs.
+  "terminal.integrated.tabs.enabled": true, // Enable tabs in the terminal to easily manage multiple terminals simultaneously.
+  "terminal.integrated.fontSize": 14, // Font size in terminal
+
+  // ==========================================
+  //             WINDOWS ONLY
+  // ==========================================
+  "terminal.integrated.defaultProfile.windows": "Git Bash", // You can delete it because it doesn't work on macOS.
+  "terminal.integrated.env.windows": {}, // You can delete it because it doesn't work on macOS.
+
+  // ==========================================
+  //            macOS Profiles
+  // ==========================================
+  "terminal.integrated.profiles.osx": {
+    "bash": {
+      "path": "/bin/bash",
+      "args": ["-l"],
+    },
+    "zsh": {
+      "path": "zsh",
+      "args": ["-l"],
+    },
+    "fish": {
+      "path": "fish",
+      "args": ["-l"],
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux",
+    },
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell",
+    },
+  },
+
+  // ==========================================
+  //               TAILWIND
+  // ==========================================
+  "tailwindCSS.emmetCompletions": true, // Enable Emmet completions for Tailwind CSS, allowing you to quickly generate Tailwind classes using Emmet syntax, improving your workflow when working with Tailwind CSS in VS Code.
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html",
+    "javascript": "javascript",
+    "javascriptreact": "javascript",
+  },
+
+  // ==========================================
+  //               DIFF EDITOR
+  // ==========================================
+  "diffEditor.hideUnchangedRegions.enabled": true, // Hide unchanged regions in the comparer.
+
+  // ==========================================
+  //             CONSOLE NINJA
+  // ==========================================
+  "console-ninja.featureSet": "Community", // Utilize Console Ninja's Community features.
+  "console-ninja.toolsToEnableSupportAutomaticallyFor": {
+    "live-server-extension": true,
+    "live-preview-extension": true,
+  },
+
+  // ==========================================
+  //            GITLENS AI
+  // ==========================================
+  "gitlens.ai.model": "vscode", // Utilize GitLens' built-in AI model.
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1", // Using Copilot's GPT-4.1 model for AI features in GitLens
+
+  // ==========================================
+  //            SETTINGS SYNC
+  // ==========================================
+  "settingsSync.ignoredExtensions": [
+    "styled-components.vscode-styled-components", // Exclude the Styled Components extension from synchronization to prevent potential conflicts or issues across different environments.
+  ],
+
+  // ==========================================
+  //            Native Tabs on MacOS
+  // ==========================================
+  // "window.nativeTabs": true,
+
+  // ==========================================
+  //            BACKGROUND
+  // ==========================================
+  // Background (Tốn RAM/CPU, cân nhắc bỏ)
+  "background.fullscreen": {
+    "images": ["file:///D:/BACK/Zill.jpg"],
+    "opacity": 0.79,
+    "size": "cover",
+    "position": "center",
+    "interval": 0,
+    "random": false,
+  },
+
+  // ==========================================
+  //            FILES
+  // ==========================================
+  "files.trimTrailingWhitespace": true, // Automatically remove extra spaces at the end of lines when saving
+  "files.insertFinalNewline": true, // Automatically add a new line to the end of the file when saving.
+  "files.trimFinalNewlines": true, // Automatically remove newlines from the last line of the file when saving.
+
+  // ==========================================
+  //            EXPLORER
+  // ==========================================
+  "explorer.confirmDelete": false, // Disable confirmation when deleting files in Explorer.
+  "explorer.confirmDragAndDrop": false, // Disable confirmation when dragging and dropping files in Explorer.
+
+  // ==========================================
+  //            NAVIGATION
+  // ==========================================
+  "breadcrumbs.enabled": true, // Activate breadcrumbs to display the current file path at the top of the editor.
+
+  // ==========================================
+  //            TYPESCRIPT
+  // ==========================================
+  "typescript.updateImportsOnFileMove.enabled": "always", // Automatically update imports when moving TypeScript files.
+
+  // ==========================================
+  //            VS CODE ANIMATION
+  // ==========================================
+  "vscode_custom_css.imports": [
+    "file:///Users/hoanganh/Custom-Vscode/style-vscode.css",
+    "file:///Users/hoanganh/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js",
+  ],
+
+  // ==========================================
+  //                LIVE SERVER
+  // ==========================================
+  "liveServer.settings.donotShowInfoMsg": true, // Turn off notifications when the Live Server starts up.
+
+  // ==========================================
+  //      OPTIONAL COLOR CUSTOMIZATION
+  // ==========================================
+  "workbench.colorCustomizations": {},
+  "editor.fontFamily": "Dank Mono, Menlo, Monaco, 'Courier New', monospace",
+  "workbench.colorTheme": "Dracula Theme", // You can add your own custom colors if you want, but leaving it blank is also fine.
+}
